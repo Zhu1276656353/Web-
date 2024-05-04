@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				width: 100%;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items:center;
+			}
+			.box{
+				width: 280px;
+				height: 500px;
+				position: relative;
+				perspective: 1000px;
+				transform-style: preserve-3d;
+			}
+			.box img{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				border-radius: 30px;
+				box-shadow: 0 0 30px rgba(0,0,0,0.7);
+				backface-visibility: hidden;
+				transition: 1s;
+				-webkit-box-reflect: below 15px linear-gradient(transparent,transparent,#000); 
+			}
+			.box .img2{
+				transform: rotateY(180deg);
+			}
+			.box:hover .img1{
+				transform: rotateY(-180deg);
+			}
+			.box:hover .img2{
+				transform: rotateY(0deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="https://gd-hbimg.huaban.com/c3b38511e1cfc52c6f927f0c907fe32b7f278b5a4545d-mXlsNt_fw240webp" class="img1">
+			<img src="https://gd-hbimg.huaban.com/c01aa9f9bd8996b13a1371c867554a0846da31d25e386-eg93iE_fw240webp" class="img2">
+		</div>
+	</body>
+</html>
