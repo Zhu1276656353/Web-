@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			body{
+				width: 100%;
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.gallery{
+				width: 640px;
+				height: 400px;
+				position: relative;
+			}
+			img{
+				display: block;
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				transition: 0.2s;
+				clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+				border-radius: 20px;
+			}
+			.gallery img:nth-child(1){
+				left: 0px;
+				top: 0;
+				margin-left:10px;
+			}
+			.gallery img:nth-child(2){
+				left: 200px;
+				top: 0;
+				margin-left:20px;
+			}
+			.gallery img:nth-child(3){
+				left: 400px;
+				top: 0;
+				margin-left:30px;
+			}
+			.gallery img:nth-child(4){
+				left: 100px;
+				top: 100px;
+				margin-left:15px;
+			}
+			.gallery img:nth-child(5){
+				left: 300px;
+				top: 100px;
+				margin-left:25px;
+			}
+			.gallery img:nth-child(6){
+				left: 0px;
+				top: 200px;
+				margin-left:10px;
+			}
+			.gallery img:nth-child(7){
+				left: 200px;
+				top: 200px;
+				margin-left:20px;
+			}
+			.gallery img:nth-child(8){
+				left: 400px;
+				top: 200px;
+				margin-left:30px;
+			}
+			.gallery img:hover{
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+				z-index: 999;
+				border-radius: 20px;
+			}
+			.gallery:hover img:not(:hover){
+				filter: /* blur(1px) */ opacity(0.8) saturate(0.6);
+			}
+		</style>
+	</head>
+	<body>
+		<article class="gallery">
+		  <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
+		  <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
+		  <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
+		  <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
+		  <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
+		  <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
+		  <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
+		  <img src="https://assets.codepen.io/1506195/unsplash-music-7.avif" alt="woman singing on stage" />
+		</article>
+	</body>
+</html>
