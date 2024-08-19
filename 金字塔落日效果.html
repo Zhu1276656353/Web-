@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+
+			body {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: gray;
+			}
+
+			.box {
+				width: 25vw;
+				height: 25vw;
+				background-color: rgba(0, 0, 0, 0.7);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				border-radius: 30px;
+			}
+
+			.circle {
+				width: 15vw;
+				height: 15vw;
+				background-color:skyblue;
+				border-radius: 50%;
+				position: relative;
+				overflow: hidden;
+				animation: circletransform 5s infinite ;
+			}
+			@keyframes circletransform{
+				0%{
+					opacity: 1;
+				}
+				90%{
+					opacity: 1;
+				}
+				100%{
+					opacity: 0;
+				}
+			}
+			.sun {
+				position: absolute;
+				width: 3vw;
+				height: 3vw;
+				border-radius: 50%;
+				top: 40%;
+				left: -32%;
+				animation: sunRotate 5s infinite linear;
+				transform-origin: 460% 500%;
+			}
+			@keyframes sunRotate {
+				0% {
+					transform: rotate(5deg);
+					background-color: #FFFF66;
+				}
+				50% {
+					transform: rotate(40deg);
+					background-color: #FF9900;
+				}
+				100% {
+					transform: rotate(70deg);
+					background-color: #CC3333;
+				}
+			}
+			.land{
+				width: 100%;
+				height: 100%;
+				background-color:#FFFF99;
+				position: absolute;
+				top:70%;
+			}
+			.leftSide{
+				width: 5vw;
+				height: 5vw;
+				background-color: rgba(255,255,255,1);
+				position: absolute;
+				clip-path: polygon(50% 0, 0% 100%, 70% 100%);
+				top: 37%;
+				left: 50%;
+				transform:translateX(-50%);
+				float: left;
+				animation: colortransform1 5s infinite;
+			}
+			@keyframes colortransform1{
+				to{
+					background-color: rgba(199,199,199,1);
+				}
+			}
+			.rightSide{
+				width: 5vw;
+				height: 5vw;
+				background-color: rgba(199,199,199,1);
+				position: absolute;
+				top: 37%;
+				left: 50%;
+				transform:translateX(-50%);
+				float: left;
+				clip-path: polygon(50% 0, 100% 100%, 70% 100%);
+				animation: colortransform2 5s infinite;
+			}
+			@keyframes colortransform2{
+				to{
+					background-color: rgba(255,255,255,1);
+				}
+			}
+			.shadow{
+				width: 9.5vw;
+				height: 5vw;
+				background-color: rgba(0,0,0,0.7);
+				clip-path: polygon(0 0, 52% 0, 100% 50%);
+				position: absolute;
+				top:70%;
+				left: 90%;
+				transform: translateX(-90%);
+				animation: shadowtransform 5s infinite;
+			}
+			@keyframes shadowtransform{
+				form{
+					clip-path: polygon(0 0, 52% 0, 100% 50%);
+				}
+				to{
+					clip-path: polygon(42% 0, 94% 0, 10% 30%);
+					left: 20%;
+					transform: translateX(-20%);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="circle">
+				<div class="sun"></div>
+				<div class="leftSide"></div>
+				<div class="rightSide"></div>
+				<div class="land"></div>
+				<div class="shadow"></div>
+			</div>
+		</div>
+	</body>
+</html>

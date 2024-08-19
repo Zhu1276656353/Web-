@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* border-color: brown brown brown transparent;一侧边框透明,做出C样 */
+			* {
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+
+			body {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: linear-gradient(60deg,#BD8F5D 0%,#BE7112 100%); 
+			}
+
+			.box {
+				width: 25vw;
+				height: 25vw;
+				background-color: #FF9999;
+				border-radius: 30px;
+				overflow: hidden;
+			}
+			.leftSide{
+				width: 60%;
+				height: 100%;
+				background-color: whitesmoke;
+				position: relative;
+				overflow: hidden;
+				float: left;
+			}
+			.picture{
+				width: 50%;
+				height: 30%;
+				border-radius: 50%;
+				position: relative;
+				border: 2px solid black;
+				margin: 2vw auto;
+				margin-bottom: 1vw;
+				background-image: url("https://bkimg.cdn.bcebos.com/pic/d1a20cf431adcbef76091cafaff839dda3cc7cd93159?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536");
+				background-size: cover;
+				background-position: 0% 10%;
+				z-index: 999;
+			}
+			.circle{
+				border: 2px solid transparent;
+				border-radius: 50%;
+				position: absolute;
+				cursor: pointer;
+				transition: 1.5s ease-in-out;
+			}
+			.circle:nth-child(1){
+				width: 110%;
+				height: 110%;
+				top: -5%;
+				left: -5%;
+				border-color: brown brown brown transparent;
+			}
+			.circle:nth-child(2){
+				width: 120%;
+				height: 120%;
+				top: -10%;
+				left: -10%;
+				border-color: brown transparent brown brown ;
+			}
+			.picture:hover>.circle:nth-child(1){
+				transform: rotate(360deg);
+			}
+			.picture:hover>.circle:nth-child(2){
+				transform: rotate(-360deg);
+			}
+			.leftSide>span:nth-of-type(1){
+				display: block;
+				font-size: 1.5vw;
+				font-family: "华文中宋";
+				margin-left: 50%;
+				transform: translateX(-50%);
+				color: #996633;
+			}
+			.leftSide>span:nth-of-type(2){
+				display: block;
+				font-size: 1vw;
+				font-family: "华文隶书";
+				margin-left: 55%;
+				transform: translateX(-55%);
+				color: rgba(0,0,0,0.5);
+				margin-bottom: 10%;
+			}
+			.leftSide>input{
+				width: 70%;
+				height: 10%;
+				border-radius: 30px;
+				margin-top: 5%;
+				margin-left: 50%;
+				transform: translateX(-50%);
+				background-color: transparent;
+				font-weight: 700;
+				font-size: 1vw;
+				color: #996633;
+				transition: 0.2s ;
+			}
+			.leftSide>input:hover{
+				background-color: #663300;
+				cursor: pointer;
+				color: whitesmoke;
+			}
+			.rightSide{
+				width: 40%;
+				height: 100%;
+				margin-right: 0%;
+				background-color: whitesmoke;
+				float: left;
+			}
+			.personLike{
+				width: 100%;
+				height: 33%;
+				background-color: #FFCC99;
+				overflow: hidden;
+				cursor: pointer;
+			}
+			.personLike:not(:nth-child(1)){
+				margin-top: 1.5%;
+			}
+			
+			.personLike span{
+				display: block;
+				width: 5vw;
+				height: 2vw;
+				text-align: center;
+				transition: 0.3s;
+			}
+			
+			.personLike span:nth-child(1){
+				font-size: 2vw;
+				margin-top: 15%;
+				margin-left: 50%;
+				transform: translateX(-50%);
+				color: #663300;
+			}
+			.personLike span:nth-child(1):hover{
+				color: #CC3333;
+			}
+			.personLike span:nth-child(2){
+				font-size: 0.8vw;
+				margin-left: 50%;
+				transform: translateX(-50%);
+				margin-top: 10%;
+				color: rgba(0,0,0,0.5);
+			}
+			.personLike span:nth-child(2):hover{
+				color: #FF6666;
+			}
+			.personLike:hover>span:nth-child(1){
+				font-size: 2.1vw;
+			}
+			.personLike:hover>span:nth-child(2){
+				font-size: 0.9vw;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="leftSide">
+				<div class="picture">
+					<div class="circle"></div>
+					<div class="circle"></div>
+				</div>
+				<span>Jay Chou</span>
+				<span>Famous Songer</span>
+				<input type="button" value="Follow">
+				<input type="button" value="Message">
+			</div>
+			<div class="rightSide">
+				<div class="personLike">
+					<span>337</span>
+					<span>Posts</span>
+				</div>
+				<div class="personLike">
+					<span>125</span>
+					<span>Likes</span>
+				</div>
+				<div class="personLike">
+					<span>114</span>
+					<span>Follower</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
